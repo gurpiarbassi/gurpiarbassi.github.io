@@ -40,6 +40,7 @@ The package org.apache.commons.collections4 has a MultiMap class which implement
 
 ###The Java 8 lambda approach
 However If you would like a pure Java approach without having to add dependancies such as commons-collections4 to your project, you can do the following:
+
 ```
 10.public void addToMap(String key, String value){
 11.  map.computeIfAbsent(key, k -> new ArrayList<>())
