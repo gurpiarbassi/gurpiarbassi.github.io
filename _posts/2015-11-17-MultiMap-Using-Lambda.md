@@ -1,6 +1,6 @@
 ---
 layout: post
-title: The classic multi-map idiom using Java 8 Lambda
+title: The classic multi-map idiom using Java 8 Lambda Calculus
 published: true
 categories: 
             - Java 8
