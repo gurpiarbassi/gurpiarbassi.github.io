@@ -50,6 +50,6 @@ However If you would like a pure Java approach without having to add dependancie
 
 ###Explanation
 Lines 3-6 are equivalent to line 11.
-The computeIfAbsent method on the java.util.Map interface takes a Key with which the specified value is to be associated and a mapping function used to compute the value. In our case the mapping function simply takes a key and create a new ArrayList.
+The computeIfAbsent method on the java.util.Map interface takes a key with which the specified value is to be associated and a mapping function used to compute the value. In our case the mapping function simply takes a key and create a new ArrayList.
 
 Line 8 is equivalent to line 12.
