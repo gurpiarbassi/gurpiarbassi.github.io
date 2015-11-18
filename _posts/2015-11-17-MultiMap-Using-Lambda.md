@@ -50,7 +50,7 @@ public void addToMap(String key, String value){
 {% endhighlight %}
 
 ###Explanation
-Lines 5-8 are equivalent to line 11.
+Lines 5-8 are equivalent to line 13.
 The `computeIfAbsent(..)` method on the java.util.Map interface takes a key with which the specified value is to be associated and a mapping function used to compute the value. In our case the mapping function simply takes a key and create a new ArrayList.
 
-Line 8 is equivalent to line 12.
+Line 10 is equivalent to line 14.
