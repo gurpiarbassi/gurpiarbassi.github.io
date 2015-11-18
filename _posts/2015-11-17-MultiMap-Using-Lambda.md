@@ -1,7 +1,7 @@
 ---
 layout: post
 title: The classic multi-map idiom using Java 8 Lambda Calculus
-published: false
+published: true
 categories: 
             - Java 8
             - Multimap
