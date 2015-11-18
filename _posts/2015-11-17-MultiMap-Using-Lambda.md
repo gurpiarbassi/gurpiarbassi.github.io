@@ -15,17 +15,17 @@ Often you see yourself and other writing a code using a multimap idiom to store 
 ###The classic approach
 
 {% highlight java linenos=table%}
-1.Map<String, List<String>> multimap = new HashMap<>();
+Map<String, List<String>> multimap = new HashMap<>();
 ..
 ..
-2.public void addToMap(String key, String value){
-3.  List<String> values = multimap.get(key);
-4.  if(values == null){
-5.    values = new ArrayList<>();
-6.    multimap.put(key, values);
-7.  }
-8.  values.add(value);
-9.}
+public void addToMap(String key, String value){
+  List<String> values = multimap.get(key);
+  if(values == null){
+    values = new ArrayList<>();
+    multimap.put(key, values);
+  }
+  values.add(value);
+}
 {% endhighlight %}
 
 
@@ -43,10 +43,10 @@ The package org.apache.commons.collections4 has a MultiMap class which implement
 However If you would like a pure Java approach without having to add dependencies such as commons-collections4 to your project, you can do the following:
 
 {% highlight java %}
-10.public void addToMap(String key, String value){
-11.  map.computeIfAbsent(key, k -> new ArrayList<>())
-12.     .add(value);
-13.}
+public void addToMap(String key, String value){
+  map.computeIfAbsent(key, k -> new ArrayList<>())
+     .add(value);
+}
 {% endhighlight %}
 
 ###Explanation
