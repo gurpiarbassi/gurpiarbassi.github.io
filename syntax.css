@@ -1,4 +1,6 @@
-.highlight  { background: #222; border:0; overflow:inherit}
+.highlight  { background: #222; border:0; overflow:inherit; -moz-box-shadow: none;
+  -webkit-box-shadow: none; box-shadow: none;}
+  
 .highlight .c { color: #999988; font-style: italic } /* Comment */
 .highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
 .highlight .k { font-weight: bold } /* Keyword */
