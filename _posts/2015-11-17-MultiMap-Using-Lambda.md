@@ -14,7 +14,7 @@ Often you see yourself and other writing a code using a multimap idiom to store 
 
 ###The classic approach
 
-{% highlight java %}
+{% highlight java linenos=table%}
 1.Map<String, List<String>> multimap = new HashMap<>();
 ..
 ..
