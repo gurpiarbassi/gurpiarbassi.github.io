@@ -17,6 +17,7 @@ We've all seen code at some point that looks like the following:
 {% highlight java linenos=table%}
 if(logger.isDebugEnabled()){  //by having this check we ensure that the string concatenation is not performed below.
   logger.debug("firstname =  " + firstName); //concat
+  }
 {% endhighlight %}
 
 1. The fact that we have to make a call to `isDebugEnabled()` results in a extra line of code.
@@ -28,7 +29,6 @@ Java 8 Lambdas allow us to perform lazy evaluation. By using a lambda, the code 
 
 {% highlight java linenos=table%}
   logger.debug(() -> "firstname =  " + firstName);
-}
 {% endhighlight %}
 We don't need the guard condition since the string concatenation will only be done if 'logger.debug()' executes i.e. if log4j configuration has debug enabled. The log methods have been extended to take a functional interface (supplier) to construct the log statement.
 
