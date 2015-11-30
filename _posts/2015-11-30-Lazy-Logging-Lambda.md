@@ -17,7 +17,6 @@ We've all seen code at some point that looks like the following:
 {% highlight java linenos=table%}
 if(logger.isDebugEnabled()){  //by having this check we ensure that the string concatenation is not performed below.
   logger.debug("firstname =  " + firstName); //concat
-}
 {% endhighlight %}
 
 1. The fact that we have to make a call to `isDebugEnabled()` results in a extra line of code.
