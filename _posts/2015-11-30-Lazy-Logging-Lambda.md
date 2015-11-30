@@ -20,7 +20,7 @@ if(logger.isDebugEnabled()){  //by having this check we ensure that the string c
 {% endhighlight %}
 
 1. The fact that we have to make a call to `isDebugEnabled()` results in a extra line of code.
-+ The statement has a guard condition to save on the computation spent on string concatenation. I've often made the mistake of changing the log statement to be `logger.info()` and leaving the guard condition to `if(logger.isDebugEnabled())`.
+2. The statement has a guard condition to save on the computation spent on string concatenation. I've often made the mistake of changing the log statement to be `logger.info()` and leaving the guard condition to `if(logger.isDebugEnabled())`.
 
 ##How lamdafication can help
 
