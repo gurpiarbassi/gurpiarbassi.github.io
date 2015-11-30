@@ -1,7 +1,7 @@
 ---
 layout: post
 title: The Lazy Logging Lambda
-published: false
+published: true
 categories: 
             - Java 8
             - Multimap
@@ -33,31 +33,9 @@ Java 8 Lambdas allow us to perform lazy evaluation. By using a lambda, the code 
   logger.debug(() -> "firstname =  " + firstName);
 }
 {% endhighlight %}
-We don't need the guard condition since the string concatenation will only be done if 'logger.debug()' executes i.e. if log4j
-configuration has debug enabled.
+We don't need the guard condition since the string concatenation will only be done if 'logger.debug()' executes i.e. if log4j configuration has debug enabled. The log methods have been extended to take a functional interface (supplier) to construct the log statement.
 
-###The Apache Commons approach
-The package org.apache.commons.collections4 has a MultiMap class which implements java.util.Map. This can also be used to create a Map that has multiple values for a given key
+By passing a functional interface (lambda) we are effectivly passing behaviour around and it is executed only when required by the method using it.
 
-{% highlight java%}
- MultiMap mhm = new MultiValueMap();
- mhm.put(key, "A");
- mhm.put(key, "B");
- mhm.put(key, "C");
-{% endhighlight %}
+Note that this also assumes you are using log4j2 since it comes with Java 8 Lambda support.
 
-###The Java 8 lambda approach
-However If you would like a pure Java approach without having to add dependencies such as commons-collections4 to your project, you can do the following:
-
-{% highlight java linenos=table%}
-public void addToMap(String key, String value){
-  map.computeIfAbsent(key, k -> new ArrayList<>())
-     .add(value);
-}
-{% endhighlight %}
-
-###Explanation
-Lines 5-8 are equivalent to line 13.
-The `computeIfAbsent(..)` method on the java.util.Map interface takes a key with which the specified value is to be associated and a mapping function used to compute the value. In our case the mapping function simply takes a key and create a new ArrayList.
-
-Line 10 is equivalent to line 14.
