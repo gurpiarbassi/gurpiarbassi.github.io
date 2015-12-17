@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Recording last updated and created timestamp on a JPA entity
-published: false
+published: true
 categories: 
             - Java
             - JPA
