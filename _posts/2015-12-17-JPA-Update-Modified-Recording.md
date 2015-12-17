@@ -16,6 +16,12 @@ JPA has a nice feature which allows you to define callback methods that respond 
 Consider the following example:
 
 {% highlight java linenos=table%}
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.PrePersist;
+import javax.persistence.PreUpdate;
+
+@Entity
 public class Customer{
   private String firstname;
   private String lastname;
