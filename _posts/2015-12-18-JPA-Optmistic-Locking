@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Implementing Optimistic Locking with JPA
-published: false
+published: true
 categories: 
             - Java
             - JPA
@@ -24,11 +24,6 @@ Consider the following JPA entity:
 
 {% highlight java linenos=table%}
 import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.PrePersist;
-import javax.persistence.PreUpdate;
-import java.time.ZonedDateTime;
-import java.time.ZoneId;
 
 @Entity
 public class Customer{
@@ -78,6 +73,30 @@ public void CustomerTest(){
 4. The test also fails because we are expecting to get a OptimisticLockException.
 
 ##How to fix it
-Firstly we need to ensure we create column on our CUSTOMER table that we can use for the version. 
+Firstly we need to ensure we create column on our CUSTOMER table that we can use for the version. You can use any datatype for this
+column, however hibernate recommends using Long.
 
+Secondly we need to add the version column to our customer entity and annotate it with @Version.
 
+The Customer entity now looks like:
+
+{% highlight java linenos=table%}
+import javax.persistence.Entity;
+
+@Entity
+public class Customer{
+  private String firstname;
+  private String lastname;
+  private int state;
+  
+  @Version
+  private Long version;
+  
+  public void setState(int state){
+    this.state = state;
+  }
+}
+{% endhighlight %}
+
+And that's all we have to do to make it work. The test should now pass because the version column would have prevented the second update
+from being successful and threw a OptimisticLockException.
