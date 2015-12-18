@@ -49,6 +49,6 @@ It also ensures the updatedTimestamp is persisted with the same value just to ke
 
 2. The `onUpdate()` method gets called when the entity is about to be updated. Here we simply ensure we have the current date/time again.
 
-3. Its also worth noting the timestamps are stored as UTC as per best pratice.
+3. Its also worth noting the timestamps are stored as UTC as per best practice.
 
 
