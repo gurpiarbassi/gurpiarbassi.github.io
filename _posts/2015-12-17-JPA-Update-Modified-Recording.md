@@ -15,6 +15,7 @@ modified. There are several ways to do this ranging from database triggers to pr
 JPA has a nice feature which allows you to define callback methods that respond to an entities lifecycle events.
 Consider the following example:
 
+##Example
 {% highlight java linenos=table%}
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -47,3 +48,5 @@ public class Customer{
 It also ensures the updatedTimestamp is persisted with the same value just to keep things tidy.
 
 2. The `@PreUpdate` annotation gets called when the entity is about to be updated. Here we simply ensure we have the current date/time again.
+
+
