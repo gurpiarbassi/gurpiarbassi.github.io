@@ -49,8 +49,8 @@ Lets write a failing test to prove the fix that we will do.
 @Test(expected = OptimisticLockException.class)
 public void CustomerTest(){
   //just imagine we have a DAO somewhere that has finder methods on it.
-  final Customer customer1 = dao.findCustomersByCustomerNo(1);
-  final Customer customer2 = dao.findCustomersByCustomerNo(1);
+  final Customer customer1 = dao.findCustomerByCustomerNo(1);
+  final Customer customer2 = dao.findCustomerByCustomerNo(1);
 
   customer1.setState(76);
   customer2.setState(98);
@@ -60,7 +60,7 @@ public void CustomerTest(){
       dao.update(customer2); //another transaction created but should not allow update due to optimistic locking
      }
      catch(final OptimisticLockException lockException){
-        final Customer modifiedCustomer = dao.findCustomersByCustomerNo(1);
+        final Customer modifiedCustomer = dao.findCustomerByCustomerNo(1);
         assertThat(modifiedCustomer.getState(), is(76));
         throw lockException;
     }
