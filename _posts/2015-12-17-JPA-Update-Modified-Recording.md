@@ -36,7 +36,7 @@ public class Customer{
     createdTimestamp = ZonedDateTime.now(ZoneId.of("UTC"));
     updatedTimestamp = createdTimestamp;
   }
-  
+
   @PreUpdate
   void onUpdate(){
     updatedTimestamp = ZonedDateTime.now(ZoneId.of("UTC"));
@@ -44,9 +44,9 @@ public class Customer{
 }
 {% endhighlight %}
 
-1. The `@PrePersist` annotation responds to the persist lifecycle event by intialising the createdTimestamp to the current date and time.
+1. The `onCreate()` method responds to the persist lifecycle event by intialising the createdTimestamp to the current date and time.
 It also ensures the updatedTimestamp is persisted with the same value just to keep things tidy.
 
-2. The `@PreUpdate` annotation gets called when the entity is about to be updated. Here we simply ensure we have the current date/time again.
+2. The `onUpdate()` method gets called when the entity is about to be updated. Here we simply ensure we have the current date/time again.
 
 
