@@ -4,8 +4,6 @@ title: apt-get behind a proxy
 published: true
 categories: 
             - Linux
-            - apt-get
-
 ---
 
 #Motivation
