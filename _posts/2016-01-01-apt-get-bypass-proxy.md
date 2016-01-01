@@ -12,7 +12,7 @@ I was recently using my work laptop and wanted to install some software on it us
 However this time I was at home and I kept getting timeouts. I later learnt that there was a proxy server configured which was preventing me from installing anything through apt-get.
 
 #Solution
-After looking around the web for answers I cam accross the following command:
+After looking around the web for answers I came accross the following command:
 
 `Acquire::http::proxy=false`
 
