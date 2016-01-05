@@ -15,8 +15,8 @@ The exclamation mark has several uses in Linux. I found two really useful ones.
 
 ####Re-execute command in history
 We mostly use the up and down keys to scroll the the list of commands we have previously types.
-If you use the *history* command it will give you a log of the commands you have previously executed. For example you may get the
-following output:
+If you use the *history* command it will give you a log of the commands you have previously executed. For example you may get the following output:
+
 ```
  1988  ls  
  1989  git status  
