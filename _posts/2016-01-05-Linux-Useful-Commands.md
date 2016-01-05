@@ -32,6 +32,4 @@ Sometimes you execute a command and it fails because you forgot to prefix it wit
 You could simply type `sudo !!` to execute the last command as superuser.
 
 
-More information on event designators can be found [here][] 
-[here]: https://www.gnu.org/software/bash/manual/html_node/Event-Designators.html
-
+More information on event designators can be found [here](https://www.gnu.org/software/bash/manual/html_node/Event-Designators.html)
