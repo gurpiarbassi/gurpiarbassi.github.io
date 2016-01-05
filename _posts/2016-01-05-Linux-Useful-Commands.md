@@ -25,7 +25,7 @@ following output:
  1992  git checkout -b feature/test
  1993  cd ../
 
-If you wanted to re-execute command 1989 again, all you need to do is type `!1989` and it will perform the git status command again.
+If you wanted to re-execute command 1989 again, all you need to do is type `!1989` and it will perform the `git status` command again.
 
 ####Re-execute last command with sudo
 Sometimes you execute a command and it fails because you forgot to prefix it with **sudo**. Sudo means run the command as superuser.
