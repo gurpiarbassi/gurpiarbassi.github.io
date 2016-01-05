@@ -17,14 +17,13 @@ The exclamation mark has several uses in Linux. I found two really useful ones.
 We mostly use the up and down keys to scroll the the list of commands we have previously types.
 If you use the *history* command it will give you a log of the commands you have previously executed. For example you may get the
 following output:
-
- ```powershell
- 1988  ls
- 1989  git status
- 1990  git co
- 1991  git co -b feature/test
- 1992  git checkout -b feature/test
- 1993  cd ../
+```
+ 1988  ls  
+ 1989  git status  
+ 1990  git co  
+ 1991  git co -b feature/test  
+ 1992  git checkout -b feature/test  
+ 1993  cd ../  
 ```
 
 If you wanted to re-execute command 1989 again, all you need to do is type `!1989` and it will perform the `git status` command again.
