@@ -18,7 +18,7 @@ We mostly use the up and down keys to scroll the the list of commands we have pr
 If you use the *history* command it will give you a log of the commands you have previously executed. For example you may get the
 following output:
 
- ```
+ ```powershell
  1988  ls
  1989  git status
  1990  git co
