@@ -24,10 +24,13 @@ The google code examples always show you the bit of code to get a HttpTransport 
 
 However, if you want to ensure proxy settings are picked up you need to do the following:
 
+{% highlight java linenos=table%}
+
 NetHttpTransport.Builder builder = new NetHttpTransport.Builder();
 HttpTransport transport = builder.trustCertificates(GoogleUtils.getCertificateTrustStore())
                                  .setProxy(new Proxy(Proxy.Type.HTTP, new InetSocketAddress("myProxyHost", myProxyPort)))
                                  .build();
 
+{% endhighlight %}
 
 
