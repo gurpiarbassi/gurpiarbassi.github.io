@@ -12,7 +12,7 @@ I was recently working on a Java project integrating the Google Drive Java API a
 were not going through on a staging environment. I later realised that this was because all traffic on that environment needs to go through a 
 HTTP proxy.
 
-I then looked into setting the JVM arguments http.proxyHost and http.proxyPort. Normally this is all that is required. However, this would
+I then looked into setting the JVM arguments *http.proxyHost* and *http.proxyPort*. Normally this is all that is required. However, this would
 not work for Google Drive.
 
 ##Solution
@@ -27,9 +27,10 @@ However, if you want to ensure proxy settings are picked up you need to do the f
 {% highlight java linenos=table%}
 
 NetHttpTransport.Builder builder = new NetHttpTransport.Builder();
-HttpTransport transport = builder.trustCertificates(GoogleUtils.getCertificateTrustStore())
-                                 .setProxy(new Proxy(Proxy.Type.HTTP, new InetSocketAddress("myProxyHost", myProxyPort)))
-                                 .build();
+HttpTransport transport = 
+builder.trustCertificates(GoogleUtils.getCertificateTrustStore())
+       .setProxy(new Proxy(Proxy.Type.HTTP, new InetSocketAddress("myProxyHost", myProxyPort)))
+       .build();
 
 {% endhighlight %}
 
