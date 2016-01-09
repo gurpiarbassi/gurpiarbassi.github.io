@@ -8,7 +8,7 @@ categories:
 ---
 
 #Motivation
-I was recently working on a java project integrating the Google Drive Java API and came accross a problem when calls to Google
+I was recently working on a Java project integrating the Google Drive Java API and came accross a problem when calls to Google
 were not going through on a staging environment. I later realised that this was because all traffic on that environment needs to go through a 
 HTTP proxy.
 
