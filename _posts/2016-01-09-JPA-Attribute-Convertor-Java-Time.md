@@ -32,7 +32,7 @@ public class ZonedDateTimeConverter implements AttributeConverter<ZonedDateTime,
 }
 {% endhighlight %}
 
-Note that in the example we are explictly stating UTC as the timezone since it is good practice to store data as UTC in the database.
+Note that in the example we are explictly stating UTC as the timezone since it is good practice to store timestamps as UTC in the database.
 
 {% highlight xml %}
 <?xml version="1.0" encoding="UTF-8"?>
