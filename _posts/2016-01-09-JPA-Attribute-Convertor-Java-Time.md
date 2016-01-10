@@ -1,4 +1,3 @@
-
 ---
 layout: post
 title: Java 8 and JPA 2.1 Attribute Converter
