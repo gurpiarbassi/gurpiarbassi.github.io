@@ -7,6 +7,7 @@ categories:
             - Java 8
             - JPA
             - Attribute Converter
+
 ---
 
 #Motivation
