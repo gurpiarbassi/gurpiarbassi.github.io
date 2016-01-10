@@ -1,7 +1,7 @@
 
 ---
 layout: post
-title: Implementing Optimistic Locking with JPA
+title: Java 8 and JPA 2.1 Attribute Converter
 published: true
 categories: 
             - Java 8
