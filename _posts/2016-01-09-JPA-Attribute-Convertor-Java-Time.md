@@ -34,7 +34,7 @@ public class ZonedDateTimeConverter implements AttributeConverter<ZonedDateTime,
 
 Note that in the example we are explictly stating UTC as the timezone since it is good practice to store data as UTC in the database.
 
-{% highlight xml%}
+{% highlight xml %}
 <?xml version="1.0" encoding="UTF-8"?>
 
 <persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
