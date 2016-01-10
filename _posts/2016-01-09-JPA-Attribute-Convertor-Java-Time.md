@@ -23,12 +23,12 @@ In this example, I will show how to make use if the ZonedDateTime type in Java 8
 @Converter(autoApply=true)
 public class ZonedDateTimeConverter implements AttributeConverter<ZonedDateTime, Timestamp>{
 
-    @Override
+    
     public Timestamp convertToDatabaseColumn(final ZonedDateTime entityValue) {
         return entityValue == null ? null : Timestamp.from(entityValue.toInstant());
     }
 
-    @Override
+   
     public ZonedDateTime convertToEntityAttribute(final Timestamp databaseValue) {
         return (databaseValue == null ? null : ZonedDateTime.ofInstant(databaseValue.toInstant(), ZoneId.of("UTC")));
     }
