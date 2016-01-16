@@ -26,7 +26,7 @@ try (BufferedReader br = Files.newBufferedReader(Paths.get(fileName))){
 {% endhighlight %}
 
 
-##The new lines() method on the Files class
+##The lines() method on the Files class
 
 {% highlight java %}
 final String fileName = "/tmp/data.txt";
