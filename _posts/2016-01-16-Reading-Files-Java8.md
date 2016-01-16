@@ -17,7 +17,7 @@ try (BufferedReader br = Files.newBufferedReader(Paths.get(fileName)))
 
 ##The lines() method on the BufferedReader class
 
-{% highlight java linenos=table%}
+{% highlight java %}
 final String fileName = "/tmp/data.txt";
 final List<String> list = new ArrayList<>();
 try (BufferedReader br = Files.newBufferedReader(Paths.get(fileName))){
