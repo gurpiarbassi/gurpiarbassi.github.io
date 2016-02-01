@@ -5,8 +5,8 @@ published: true
 categories: 
             - Java
             - Maven
-
 ---
+
 
 #Motivation
 I recently faced a problem where I had updated my Java installation with some extended cryptography jars. However when I ran
