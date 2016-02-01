@@ -5,7 +5,6 @@ published: true
 categories: 
             - Java
             - Maven
-
 ---
 
 #Motivation
