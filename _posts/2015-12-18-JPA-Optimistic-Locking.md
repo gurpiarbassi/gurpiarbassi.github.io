@@ -8,7 +8,7 @@ categories:
 
 ---
 
-#Motivation
+# Motivation
 It is possible to have multiple processes trying to modify the same record in the database. If a process manages to modify a stale record
 (i.e. one which has been updated by another process but not refreshed), then it could lead to the record being overwritten by the second process.
 
@@ -19,7 +19,7 @@ and when updating the record, it will ensure it only updates the record if the v
 Another process could have modified the same record in a different transaction and moved the version number on. In this case the first process should fail to update the record
 and result in a exception condition.
 
-##Example
+## Example
 Consider the following JPA entity:
 
 {% highlight java linenos=table%}
@@ -72,7 +72,7 @@ public void CustomerTest(){
 3. The test currently fails because the assertion for checking the state is now 76 fails. This is because the second update overwrote the first.
 4. The test also fails because we are expecting to get a OptimisticLockException.
 
-##How to fix it
+## How to fix it
 Firstly we need to ensure we create column on our CUSTOMER table that we can use for the version. You can use any datatype for this
 column, however hibernate recommends using Long.
 
