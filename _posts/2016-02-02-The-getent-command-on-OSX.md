@@ -7,13 +7,13 @@ categories:
 
 ---
 
-##Motivation
+# Motivation
 I was recently given a shell script to run but it was not compatible with OS X. 
 The script made use of a command called `getent`. The `getent` command basically performs a reverse DNS lookup i.e. given a host
 name it will return the ip address.
 
 
-##Creating a wrapper
+## Creating a wrapper
 In order to make this compatible with OS X, I had to create my own wrapper of the `getent` utility which delegates to an equivalent 
 OS X command `dscacheutil`.
 
