@@ -7,15 +7,15 @@ categories:
             - File I/O
 ---
 
-#Motivation
+# Motivation
 The latest features in Java 8 have proved to be very useful when reading files.
 
-##The newBufferedReader() static method on the java.nio.file.Files class.
+## The newBufferedReader() static method on the java.nio.file.Files class.
 {% highlight java %}
 try (BufferedReader br = Files.newBufferedReader(Paths.get(fileName)))
 {% endhighlight %}
 
-##The lines() method on the BufferedReader class
+## The lines() method on the BufferedReader class
 
 {% highlight java %}
 final String fileName = "/tmp/data.txt";
@@ -26,14 +26,14 @@ try (BufferedReader br = Files.newBufferedReader(Paths.get(fileName))){
 {% endhighlight %}
 
 
-##The lines() method on the Files class
+## The lines() method on the Files class
 
 {% highlight java %}
 final String fileName = "/tmp/data.txt";
 try (Stream<String> stream = Files.lines(Paths.get(fileName))) 
 {% endhighlight %}
 
-##Skipping lines with BufferedReader
+## Skipping lines with BufferedReader
 {% highlight java %}
 final List<String> list = new ArrayList<>();
 try (BufferedReader br = Files.newBufferedReader(Paths.get(fileName))) {
