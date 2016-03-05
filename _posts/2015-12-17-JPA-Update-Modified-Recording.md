@@ -8,14 +8,14 @@ categories:
 
 ---
 
-#Motivation
+# Motivation
 It is a common use case for an application to audit the date/time when a database record was first inserted and the date/time when it was subsequently
 modified. There are several ways to do this ranging from database triggers to programmatically controlling the timestamps through code.
 
 JPA has a nice feature which allows you to define callback methods that respond to an entities lifecycle events.
 Consider the following example:
 
-##Example
+## Example
 {% highlight java linenos=table%}
 import javax.persistence.Entity;
 import javax.persistence.Id;
