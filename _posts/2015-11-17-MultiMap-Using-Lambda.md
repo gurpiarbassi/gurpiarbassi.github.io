@@ -9,10 +9,10 @@ categories:
 
 ---
 
-#Motivation
+# Motivation
 Often you see yourself and other writing a code using a multimap idiom to store more than one value against a given key in a Map data structure. With the introduction of Lambda Calculus in Java 8 it has become a lot easier to write such idioms.
 
-###The classic approach
+## The classic approach
 
 {% highlight java linenos=table%}
 Map<String, List<String>> multimap = new HashMap<>();
@@ -49,7 +49,7 @@ public void addToMap(String key, String value){
 }
 {% endhighlight %}
 
-###Explanation
+### Explanation
 Lines 5-8 are equivalent to line 13.
 The `computeIfAbsent(..)` method on the java.util.Map interface takes a key with which the specified value is to be associated and a mapping function used to compute the value. In our case the mapping function simply takes a key and create a new ArrayList.
 
