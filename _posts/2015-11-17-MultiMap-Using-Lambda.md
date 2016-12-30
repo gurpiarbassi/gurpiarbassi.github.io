@@ -9,7 +9,7 @@ categories:
 
 ---
 
-#Motivation
+# Motivation
 Often you see yourself and other writing a code using a multimap idiom to store more than one value against a given key in a Map data structure. With the introduction of Lambda Calculus in Java 8 it has become a lot easier to write such idioms.
 
 ###The classic approach
@@ -29,7 +29,7 @@ public void addToMap(String key, String value){
 {% endhighlight %}
 
 
-###The Apache Commons approach
+### The Apache Commons approach
 The package org.apache.commons.collections4 has a MultiMap class which implements java.util.Map. This can also be used to create a Map that has multiple values for a given key
 
 {% highlight java%}
@@ -39,7 +39,7 @@ The package org.apache.commons.collections4 has a MultiMap class which implement
  mhm.put(key, "C");
 {% endhighlight %}
 
-###The Java 8 lambda approach
+### The Java 8 lambda approach
 However If you would like a pure Java approach without having to add dependencies such as commons-collections4 to your project, you can do the following:
 
 {% highlight java linenos=table%}
@@ -49,7 +49,7 @@ public void addToMap(String key, String value){
 }
 {% endhighlight %}
 
-###Explanation
+### Explanation
 Lines 5-8 are equivalent to line 13.
 The `computeIfAbsent(..)` method on the java.util.Map interface takes a key with which the specified value is to be associated and a mapping function used to compute the value. In our case the mapping function simply takes a key and create a new ArrayList.
 

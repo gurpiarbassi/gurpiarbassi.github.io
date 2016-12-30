@@ -7,7 +7,7 @@ categories:
             - Google Drive
 ---
 
-#Motivation
+# Motivation
 I was recently working on a Java project integrating the Google Drive Java API and came accross a problem when calls to Google
 were not going through on a staging environment. I later realised that this was because all traffic on that environment needs to go through a 
 HTTP proxy.
@@ -15,7 +15,7 @@ HTTP proxy.
 I then looked into setting the JVM arguments *http.proxyHost* and *http.proxyPort*. Normally this is all that is required. However, this would
 not work for Google Drive.
 
-##Solution
+## Solution
 
 After debugging through the decompiled Google Drive code, I realised that the proxy needs to be set on the HttpTransport object programmatically.
 The google code examples always show you the bit of code to get a HttpTransport object as follows:
