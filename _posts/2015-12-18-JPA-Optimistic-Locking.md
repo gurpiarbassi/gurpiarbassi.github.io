@@ -41,7 +41,7 @@ public class Customer{
 
 2. The state field must be updated correctly. Parallel process could be running and both could attempt to update the state to a different value.
 
-##Test
+## Test
 Lets write a failing test to prove the fix that we will do.
 
 {% highlight java linenos=table%}

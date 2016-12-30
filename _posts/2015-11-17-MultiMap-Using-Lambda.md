@@ -29,7 +29,7 @@ public void addToMap(String key, String value){
 {% endhighlight %}
 
 
-###The Apache Commons approach
+### The Apache Commons approach
 The package org.apache.commons.collections4 has a MultiMap class which implements java.util.Map. This can also be used to create a Map that has multiple values for a given key
 
 {% highlight java%}
@@ -39,7 +39,7 @@ The package org.apache.commons.collections4 has a MultiMap class which implement
  mhm.put(key, "C");
 {% endhighlight %}
 
-###The Java 8 lambda approach
+### The Java 8 lambda approach
 However If you would like a pure Java approach without having to add dependencies such as commons-collections4 to your project, you can do the following:
 
 {% highlight java linenos=table%}

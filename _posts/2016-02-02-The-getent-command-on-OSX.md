@@ -4,7 +4,6 @@ title: Using the getent command on OS X
 published: true
 categories: 
             - Linux
-
 ---
 
 # Motivation
