@@ -12,7 +12,7 @@ categories:
 # Motivation
 Often you see yourself and other writing a code using a multimap idiom to store more than one value against a given key in a Map data structure. With the introduction of Lambda Calculus in Java 8 it has become a lot easier to write such idioms.
 
-###The classic approach
+## The classic approach
 
 {% highlight java linenos=table%}
 Map<String, List<String>> multimap = new HashMap<>();

@@ -4,10 +4,9 @@ title: Using the getent command on OS X
 published: true
 categories: 
             - Linux
-
 ---
 
-## Motivation
+# Motivation
 I was recently given a shell script to run but it was not compatible with OS X. 
 The script made use of a command called `getent`. The `getent` command basically performs a reverse DNS lookup i.e. given a host
 name it will return the ip address.
