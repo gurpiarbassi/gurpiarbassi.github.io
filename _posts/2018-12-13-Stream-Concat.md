@@ -81,6 +81,4 @@ public class Tests {
         // https://github.com/TechEmpower/misc/blob/master/concat/src/main/java/rnd/StreamConcatenation.java
 
     }
-
-}
 {% endhighlight %}
