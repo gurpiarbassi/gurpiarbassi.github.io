@@ -14,19 +14,6 @@ Calling the Stream::concat method multiple times isn't very readable.
 ## Three ways to do it
 
 {% highlight java linenos=table%}
-package com.gurps;
-
-import org.junit.Test;
-
-import java.util.Arrays;
-import java.util.List;
-import java.util.function.Function;
-import java.util.stream.Stream;
-
-import static java.util.stream.Collectors.toList;
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
-
 public class Tests {
 
 
