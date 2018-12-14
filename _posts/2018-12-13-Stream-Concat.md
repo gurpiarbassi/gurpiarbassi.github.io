@@ -13,7 +13,7 @@ Calling the Stream::concat method multiple times isn't very readable.
 
 ## Three ways to do it
 
-{% highlight java linenos=table%}
+{% highlight java %}
 public class Tests {
 
 
