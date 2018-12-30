@@ -22,4 +22,6 @@ Map<Boolean, Long> strings =
                   .collect(partitioningBy(s -> s.length() % 2 == 0, Collectors.counting()));
 {% endhighlight %}
 
-The Collectors.counting() method is a downstream collector because it performs postprocessing after the partitioning is complete.
+The Collectors.counting() method is a downstream collector because it performs postprocessing after the partitioning is complete. You end up with a map like:
+true: 2
+false: 3
