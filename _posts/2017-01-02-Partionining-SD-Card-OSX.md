@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Partioning a SDXC card on OS X to use with Raspberry Pi
+title: Partitioning a SDXC card on OS X to use with Raspberry Pi
 published: true
-categories: 
+categories:
             - Raspberry Pi
             - OS X
             - Partioning
@@ -18,7 +18,7 @@ I wanted to use an existing 64 GB SDXC card in a Raspberry Pi. However from read
 2. Select the SD Card
 3. Erase all and format it with the "OS X Extended (Journaled) option" using GUID based partitioning
 4. The partition button now becomes clickable so click on it
-5. From here create 2 partitions of approximately equal size using "OS X Extended (Journaled)" option for each partition 
+5. From here create 2 partitions of approximately equal size using "OS X Extended (Journaled)" option for each partition
 6. Two partitions will now be created but we need to make them into FAT 32 partitions
 7. Individually select each partition and erase it, selecting "MS-DOS (FAT)" this time
 
