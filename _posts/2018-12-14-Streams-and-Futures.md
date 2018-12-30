@@ -22,7 +22,7 @@ List<Integer> lengths =
                   .collect(toList());
 {% endhighlight %}
 
-The problem with the above code is that intermediate stream operations are lazy by nature. This means the above pipeline will only start to execute once .collect() is called i.e. it wil execute in serial order.
+The problem with the above code is that intermediate stream operations are lazy by nature. This means the above pipeline will only start to execute once .collect() is called i.e. it will execute in serial order.
 
 ## Modified pipeline to correct parallelism
 You need to split the pipeline into two seperate pipelines with the first firing off the futures and the second completing them with join().
