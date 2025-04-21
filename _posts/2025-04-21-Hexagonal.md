@@ -528,4 +528,4 @@ public class TestRabbitConfig {
             .to(testBookEventsExchange)
             .with("book.available");
     }
-}
+} 
