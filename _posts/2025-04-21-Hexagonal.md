@@ -453,7 +453,7 @@ public class ReservationIntegrationTest {
     }
 }
 
-The test above demonstrates how we can test our REST API endpoints while maintaining proper test isolation through the `@Transactional` annotation. Let's also look at how we test our message-driven components:
+The test above demonstrates how we can test our REST API endpoints maintaining proper test isolation through the `@Transactional` annotation. Let's also look at how we test our message-driven components:
 
 ```java
 @SpringBootTest
