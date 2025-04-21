@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Implementing Hexagonal Architecture with a Library Book Reservation System"
+published: true
 date: 2025-04-21
 categories: architecture spring-boot hexagonal
 ---
