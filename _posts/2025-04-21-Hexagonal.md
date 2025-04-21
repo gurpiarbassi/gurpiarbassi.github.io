@@ -453,7 +453,7 @@ public class ReservationIntegrationTest {
     }
 }
 
-The test above demonstrates how we can test our REST API endpoints maintaining proper test isolation through the `@Transactional` annotation. Let's also look at how we test our message-driven components:
+The test above demonstrates how we can test our REST API endpoints maintaining proper test isolation through the `@Transactional` annotation. Lets also look at how we test our message-driven components:
 
 ```java
 @SpringBootTest
@@ -501,7 +501,7 @@ public class BookAvailabilityIntegrationTest {
 }
 ```
 
-Finally, here's the configuration needed for our test message broker:
+Finally, here is the configuration needed for our test message broker:
 
 ```java
 @Configuration
@@ -525,4 +525,4 @@ public class TestRabbitConfig {
             .to(testBookEventsExchange)
             .with("book.available");
     }
-} 
+}
