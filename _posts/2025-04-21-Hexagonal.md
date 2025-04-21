@@ -424,11 +424,9 @@ public class ReservationIntegrationTest {
     @Autowired
     private ReservationRepository reservationRepository;
     
-    /**
-     * Note: @SpringBootTest does not provide transactional support by default.
-     * We add @Transactional at the class level to ensure test isolation and
-     * automatic rollback of database changes after each test method.
-     */
+    // Note: @SpringBootTest does not provide transactional support by default.
+    // We add @Transactional at the class level to ensure test isolation and
+    // automatic rollback of database changes after each test method.
     @Test
     void shouldCreateReservationViaRestApi() throws Exception {
         // Arrange
@@ -506,10 +504,8 @@ public class BookAvailabilityIntegrationTest {
     }
 }
 
-/**
- * Test configuration that sets up a test-specific RabbitMQ exchange and queue
- * for capturing domain events.
- */
+// Test configuration that sets up a test-specific RabbitMQ exchange and queue
+// for capturing domain events.
 @Configuration
 public class TestRabbitConfig {
     @Bean
