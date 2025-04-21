@@ -8,7 +8,7 @@ categories:
 
 ---
 
-# Role Explosion
+# Motivation
 Sometimes we need to interrogate a lot of roles to ensure that the user has the right permissions to perform an action.
 
 For example in this spring code:
