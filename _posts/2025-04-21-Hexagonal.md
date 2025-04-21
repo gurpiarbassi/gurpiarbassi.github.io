@@ -405,6 +405,8 @@ public class AmqpEventPublisherTest {
 
 ### 3. Integration Tests
 
+// The test above demonstrates how we can test our REST API endpoints maintaining proper test isolation through the `@Transactional` annotation. Lets also look at how we test our message-driven components:
+
 ```java
 @SpringBootTest
 @Transactional
@@ -452,8 +454,7 @@ public class ReservationIntegrationTest {
         assertThat(updatedBook.getStatus()).isEqualTo(BookStatus.RESERVED);
     }
 }
-
-The test above demonstrates how we can test our REST API endpoints maintaining proper test isolation through the `@Transactional` annotation. Lets also look at how we test our message-driven components:
+```
 
 ```java
 @SpringBootTest
@@ -526,3 +527,4 @@ public class TestRabbitConfig {
             .with("book.available");
     }
 }
+```
