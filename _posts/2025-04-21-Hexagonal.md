@@ -406,12 +406,6 @@ public class AmqpEventPublisherTest {
 ### 3. Integration Tests
 
 ```java
-/**
- * Integration tests that verify the interaction between our adapters
- * and the core domain logic. These tests use Spring's test support
- * but focus on testing our application's behavior rather than
- * framework configuration.
- */
 @SpringBootTest
 @Transactional
 public class ReservationIntegrationTest {
@@ -440,16 +434,15 @@ public class ReservationIntegrationTest {
         // Act
         mockMvc.perform(post("/api/reservations")
             .contentType(MediaType.APPLICATION_JSON)
-            .content("""
-                {
-                    "bookId": "%s",
-                    "userId": "%s"
-                }
-                """.formatted(bookId, userId)))
+            .content(String.format(
+                "{\"bookId\": \"%s\", \"userId\": \"%s\"}",
+                bookId,
+                userId
+            )))
             .andExpect(status().isOk())
             .andExpect(jsonPath("$.bookId").value(bookId.toString()))
             .andExpect(jsonPath("$.userId").value(userId.toString()));
-            
+        
         // Assert
         List<Reservation> reservations = reservationRepository.findByUserId(userId);
         assertThat(reservations).hasSize(1);
@@ -460,6 +453,9 @@ public class ReservationIntegrationTest {
     }
 }
 
+The test above demonstrates how we can test our REST API endpoints while maintaining proper test isolation through the `@Transactional` annotation. Let's also look at how we test our message-driven components:
+
+```java
 @SpringBootTest
 @Transactional
 public class BookAvailabilityIntegrationTest {
@@ -490,22 +486,24 @@ public class BookAvailabilityIntegrationTest {
                 Book updatedBook = bookRepository.findById(bookId).orElseThrow();
                 assertThat(updatedBook.getStatus()).isEqualTo(BookStatus.AVAILABLE);
             });
-            
+        
         // Wait for and verify the actual domain event message
         await()
             .atMost(5, SECONDS)
             .untilAsserted(() -> {
                 Message message = rabbitTemplate.receive("book-events", 1000);
                 assertThat(message).isNotNull();
-                BookAvailableMessage event = (BookAvailableMessage) rabbitTemplate.getMessageConverter()
-                    .fromMessage(message);
+                BookAvailableMessage event = (BookAvailableMessage) 
+                    rabbitTemplate.getMessageConverter().fromMessage(message);
                 assertThat(event.getBookId()).isEqualTo(bookId);
             });
     }
 }
+```
 
-// Test configuration that sets up a test-specific RabbitMQ exchange and queue
-// for capturing domain events.
+Finally, here's the configuration needed for our test message broker:
+
+```java
 @Configuration
 public class TestRabbitConfig {
     @Bean
@@ -519,7 +517,10 @@ public class TestRabbitConfig {
     }
     
     @Bean
-    public Binding testBookEventsBinding(Queue testBookEventsQueue, DirectExchange testBookEventsExchange) {
+    public Binding testBookEventsBinding(
+        Queue testBookEventsQueue, 
+        DirectExchange testBookEventsExchange
+    ) {
         return BindingBuilder.bind(testBookEventsQueue)
             .to(testBookEventsExchange)
             .with("book.available");
