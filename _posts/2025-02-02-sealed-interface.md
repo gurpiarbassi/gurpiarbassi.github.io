@@ -7,8 +7,7 @@ categories:
             - Records
 
 ---
-
-# Selead interfaces and records to consume REST API
+# Motivation
 
 In this example we will consume a REST API and use records to represent the result. The result could be a success of a failure.
 

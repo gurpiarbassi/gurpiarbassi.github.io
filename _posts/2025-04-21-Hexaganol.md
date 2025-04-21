@@ -6,7 +6,7 @@ date: 2025-04-21
 categories: architecture spring-boot hexagonal
 ---
 
-# Implementing Hexagonal Architecture with a Library Book Reservation System
+# Motivation
 
 In this post, we'll explore how to implement a Hexagonal Architecture (also known as Ports and Adapters) using a practical example of a library book reservation system. We'll use Spring Boot as our framework of choice.
 
@@ -296,7 +296,8 @@ public class LibraryApplication {
 
 We can test our system at different levels, taking advantage of our clean architecture:
 
-1. **Domain Logic Tests (Pure Unit Tests)**:
+### 1. Domain Logic Tests (Pure Unit Tests)
+
 ```java
 /**
  * Tests for the core domain logic, completely independent of any framework.
@@ -360,7 +361,11 @@ public class BookReservationServiceTest {
             .isInstanceOf(BookNotAvailableException.class);
     }
 }
+```
 
+### 2. AMQP Adapter Tests
+
+```java
 /**
  * Tests for the AMQP adapter implementation.
  * These tests verify that our infrastructure layer correctly handles
@@ -398,7 +403,8 @@ public class AmqpEventPublisherTest {
 }
 ```
 
-2. **Integration Tests**:
+### 3. Integration Tests
+
 ```java
 /**
  * Integration tests that verify the interaction between our adapters
